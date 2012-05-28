@@ -22,7 +22,7 @@ class LanguagePack::Octopress < LanguagePack::Jekyll
   def generate_jekyll_site
     topic("Building Octopress site")
     pipe("env PATH=$PATH git init")
-    pipe("env PATH=$PATH git remote add upstream git://github.com/austenito/curriculum.git")
+    pipe("env PATH=$PATH git remote add upstream git://github.com/austenito/austenito.com.git")
     pipe("env PATH=$PATH git pull upstream master")
     pipe("env PATH=$PATH bundle install --without development:test --path vendor/bundle --binstubs bin/ --deployment")
     pipe("env PATH=$PATH bundle exec rake generate 2>&1")
